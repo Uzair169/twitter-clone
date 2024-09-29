@@ -21,7 +21,7 @@ v2.config({
 const app = express()
 const port = process.env.PORT || 5000
 
-app.use(express.json())   //To parse req.body
+app.use(express.json({limit: '5mb'}))   //To parse req.body
 app.use(express.urlencoded({ extended: true })) //To parse form data
 
 app.use(cookieParser())
